@@ -1,12 +1,12 @@
-N = int(input())
-W = list(map(int, input().split()))
-s1 = W[0]
-s2 = sum(W[1:])
-diff = abs(s1 - s2)
+N, X = map(int, input().split())
+L = list(map(int, input().split()))
+cnt = 1
+di = 0
 
-for i in range(1, N):
-    s1 += W[i]
-    s2 -= W[i]
-    diff = min(diff, abs(s1 - s2))
+for li in L:
+    di += li
+    if di > X:
+        break
+    cnt += 1
 
-print(diff)
+print(cnt)
